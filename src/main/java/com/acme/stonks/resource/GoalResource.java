@@ -10,6 +10,6 @@ import java.sql.Date;
 public class GoalResource {
     private Long id;
     private String name;
-    private String goalAmount;
+    private Double goalAmount;
     private Date dateGoal;
 }

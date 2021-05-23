@@ -44,7 +44,7 @@ public class ClientServiceImpl implements ClientService {
             client.setFirstName(clientRequest.getFirstName());
             client.setLastName(clientRequest.getLastName());
             client.setPhone(clientRequest.getPhone());
-        return clientRepository.save(clientRequest);
+        return clientRepository.save(client);
         }).orElseThrow(()->new ResourceNotFoundException("Client","Id",clientId));
     }
 

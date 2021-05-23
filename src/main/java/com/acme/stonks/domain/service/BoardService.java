@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 
 public interface BoardService {
     Page<Board> getAllBoardsByClientId(Long clientId, Pageable pageable);
-    Board getBoardByClientId(Long clientId, Long boardId);
+    Board getBoardIdAndByClientId(Long clientId, Long boardId);
     Board createBoard(Long clientId, Board board);
     Board updateBoard(Long clientId, Long boardId, Board boardDetails);
     ResponseEntity<?> deleteBoard(Long clientId, Long boardId);

@@ -9,9 +9,9 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.sql.Date;
+@Entity
 @Getter
 @Setter
-@Entity
 @Table(name = "goals")
 public class Goal {
     @Id
@@ -20,7 +20,7 @@ public class Goal {
     @NotNull
     private String name;
     @NotNull
-    private String goalAmount;
+    private Double goalAmount;
     @NotNull
     private Date dateGoal;
 

@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 
 public interface GoalService {
     Page<Goal> getAllGoalsByClientId(Long clientId, Pageable pageable);
-    Goal getGoalByClientId(Long clientId, Long goalId);
+    Goal getGoalByIdAndClientId(Long clientId, Long goalId);
     Goal createGoal(Long clientId, Goal goal);
     Goal updateGoal(Long clientId, Long goalId, Goal goalDetails);
     ResponseEntity<?> deleteGoal(Long clientId, Long goalId);

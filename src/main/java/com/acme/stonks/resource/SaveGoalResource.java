@@ -11,7 +11,7 @@ public class SaveGoalResource {
     @NotNull
     private String name;
     @NotNull
-    private String goalAmount;
+    private Double goalAmount;
     @NotNull
     private Date dateGoal;
 }
