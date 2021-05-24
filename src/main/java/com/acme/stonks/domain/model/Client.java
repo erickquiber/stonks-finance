@@ -27,7 +27,7 @@ public class Client {
     @NotNull
     private String address;
     @NotNull
-    private String Country;
+    private String country;
 
 
 }
