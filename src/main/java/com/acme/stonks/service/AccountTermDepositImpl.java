@@ -3,7 +3,9 @@ package com.acme.stonks.service;
 import java.util.Optional;
 
 import com.acme.stonks.domain.model.AccountTermDeposit;
+import com.acme.stonks.domain.model.Bank;
 import com.acme.stonks.domain.repository.AccountTermDepositRepository;
+import com.acme.stonks.domain.repository.BankRepository;
 import com.acme.stonks.domain.service.AccountTermDepositService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +20,10 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
     @Autowired
     private AccountTermDepositRepository accountTermDepositRepository;
 
-    /*
     @Autowired
     private BankRepository bankRepository;
-
+    
+    /*
     @Autowired
     private BoardRepository boardRepository;
 
@@ -40,15 +42,12 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
     @Override
     public AccountTermDeposit createAccountTermDeposit(Long boardId, Long bankId, AccountTermDeposit accountTermDeposit) {
 
-        /*
-        Bank bank = bankRepository.findById(bankId);
-        Board board = boardRepository.findById(boardId);
+        Bank bank = bankRepository.findById(bankId).orElseThrow();
+        //Board board = boardRepository.findById(boardId);
 
         return accountTermDepositRepository.save(accountTermDeposit
-        .setBank(bank)
-        .setBoard(board));
-        */
-        return accountTermDepositRepository.save(accountTermDeposit);
+        .setBank(bank));
+        //Agregar board cuando se implemente
     }
 
     @Override
