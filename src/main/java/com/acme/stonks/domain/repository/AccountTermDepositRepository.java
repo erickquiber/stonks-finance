@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AccountTermDepositRepository extends JpaRepository<AccountTermDeposit, Long>{
     
-    /*
+    
     Page<AccountTermDeposit> findAllByBoardId(Long boardId, Pageable pageable);
-    */
+    
 }

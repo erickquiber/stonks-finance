@@ -35,7 +35,7 @@ public class AccountTermDepositController {
 
     @Autowired
     private ModelMapper mapper;
-/*
+
     @GetMapping("/board/{boardId}/accounts")
     public Page<AccountTermDepositResource> getAllAccountTermDepositsByBoardId(
     @PathVariable (value = "boardId") Long boardId,
@@ -49,7 +49,7 @@ public class AccountTermDepositController {
 
         return new PageImpl<>(resources, pageable, resources.size());
     }
-*/
+
     @GetMapping("/account/{accountId}")
     public AccountTermDepositResource getAccountbyId(@PathVariable(value = "accountId") Long accountId) {
         return convertToResource(accountTermDepositService.getAccountTermDepositById(accountId).get());

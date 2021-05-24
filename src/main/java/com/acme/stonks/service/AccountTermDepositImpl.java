@@ -4,8 +4,10 @@ import java.util.Optional;
 
 import com.acme.stonks.domain.model.AccountTermDeposit;
 import com.acme.stonks.domain.model.Bank;
+import com.acme.stonks.domain.model.Board;
 import com.acme.stonks.domain.repository.AccountTermDepositRepository;
 import com.acme.stonks.domain.repository.BankRepository;
+import com.acme.stonks.domain.repository.BoardRepository;
 import com.acme.stonks.domain.service.AccountTermDepositService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +25,17 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
     @Autowired
     private BankRepository bankRepository;
     
-    /*
+    
     @Autowired
     private BoardRepository boardRepository;
 
-     */
-/*
+ 
+
     @Override
     public Page<AccountTermDeposit> getAllAccountTermDepositsByBoardId(Long boardId, Pageable pageable) {
         return accountTermDepositRepository.findAllByBoardId(boardId, pageable);
     }
-*/
+
     @Override
     public Optional<AccountTermDeposit> getAccountTermDepositById(Long accountId) {
         return accountTermDepositRepository.findById(accountId);
@@ -43,10 +45,10 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
     public AccountTermDeposit createAccountTermDeposit(Long boardId, Long bankId, AccountTermDeposit accountTermDeposit) {
 
         Bank bank = bankRepository.findById(bankId).orElseThrow();
-        //Board board = boardRepository.findById(boardId);
+        Board board = boardRepository.findById(boardId).orElseThrow();
 
         return accountTermDepositRepository.save(accountTermDeposit
-        .setBank(bank));
+        .setBank(bank).setBoard(board));
         //Agregar board cuando se implemente
     }
 
@@ -69,5 +71,6 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
         accountTermDepositRepository.delete(post);
         return ResponseEntity.ok().build();
     }
+
     
 }

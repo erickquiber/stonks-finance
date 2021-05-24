@@ -17,6 +17,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -62,13 +65,13 @@ public class AccountTermDeposit {
     @JsonIgnore
     private Bank bank;
     
-    /*
+    
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "board_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Board board;
-    */
+    
 
 
     public Long getId() {
@@ -158,6 +161,15 @@ public class AccountTermDeposit {
 
 	public AccountTermDeposit setBank(Bank bank) {
 		this.bank = bank;
+		return this;
+	}
+
+	public Board getBoard() {
+		return board;
+	}
+
+	public AccountTermDeposit setBoard(Board board) {
+		this.board = board;
 		return this;
 	}
     

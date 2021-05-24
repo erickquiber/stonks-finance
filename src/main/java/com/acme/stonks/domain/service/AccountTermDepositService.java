@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 
 public interface AccountTermDepositService {
-    //Page<AccountTermDeposit> getAllAccountTermDepositsByBoardId(Long boardId,Pageable pageable);
+    Page<AccountTermDeposit> getAllAccountTermDepositsByBoardId(Long boardId,Pageable pageable);
     Optional<AccountTermDeposit> getAccountTermDepositById(Long accountId);
     AccountTermDeposit createAccountTermDeposit(Long boardId, Long bankId, AccountTermDeposit accountTermDeposit);
     AccountTermDeposit updateAccountTermDeposit(Long accountId, AccountTermDeposit accountDetails);
