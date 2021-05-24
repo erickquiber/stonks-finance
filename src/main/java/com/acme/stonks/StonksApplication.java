@@ -9,11 +9,14 @@ import org.springframework.context.annotation.Bean;
 public class StonksApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(StonksApplication.class, args); }
 
         @Bean
         public ModelMapper modelMapper() {
             return new ModelMapper();
         }
+
+
 
 }
