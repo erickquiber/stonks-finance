@@ -40,7 +40,6 @@ public class ClientServiceImpl implements ClientService {
             client.setDni(clientRequest.getDni());
             client.setAddress(clientRequest.getAddress());
             client.setCountry(clientRequest.getCountry());
-            client.setName(clientRequest.getName());
             client.setFirstName(clientRequest.getFirstName());
             client.setLastName(clientRequest.getLastName());
             client.setPhone(clientRequest.getPhone());

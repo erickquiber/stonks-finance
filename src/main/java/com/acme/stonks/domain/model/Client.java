@@ -16,8 +16,7 @@ public class Client {
     private  Long id;
     @NotNull
     private Integer dni;
-    @NotNull
-    private String name;
+
     @NotNull
     private String firstName;
     @NotNull

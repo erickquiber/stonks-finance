@@ -10,8 +10,6 @@ public class SaveClientResource {
     @NotNull
     private Integer dni;
     @NotNull
-    private String name;
-    @NotNull
     private String firstName;
     @NotNull
     private String lastName;
