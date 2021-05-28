@@ -2,6 +2,8 @@ package com.acme.stonks.domain.service;
 
 import com.acme.stonks.domain.model.Transaction;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;

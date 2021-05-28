@@ -23,7 +23,7 @@ public class SaveAccountTermDepositResource {
     private Date dateEnd;
     
     @NotNull
-    private boolean interestPaymentType;
+    private boolean monthlyPayment;
     
     @NotNull
     private boolean withdrawalInterest;
@@ -68,15 +68,15 @@ public class SaveAccountTermDepositResource {
         this.dateEnd = dateEnd;
     }
 
-    public boolean isInterestPaymentType() {
-        return interestPaymentType;
-    }
+    public boolean isMonthlyPayment() {
+		return monthlyPayment;
+	}
 
-    public void setInterestPaymentType(boolean interestPaymentType) {
-        this.interestPaymentType = interestPaymentType;
-    }
+	public void setMonthlyPayment(boolean monthlyPayment) {
+		this.monthlyPayment = monthlyPayment;
+	}
 
-    public boolean isWithdrawalInterest() {
+	public boolean isWithdrawalInterest() {
         return withdrawalInterest;
     }
 
@@ -84,5 +84,4 @@ public class SaveAccountTermDepositResource {
         this.withdrawalInterest = withdrawalInterest;
     }
 
-    
 }

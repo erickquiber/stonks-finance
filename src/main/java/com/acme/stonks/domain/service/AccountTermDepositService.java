@@ -1,5 +1,6 @@
 package com.acme.stonks.domain.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.acme.stonks.domain.model.AccountTermDeposit;
@@ -14,4 +15,6 @@ public interface AccountTermDepositService {
     AccountTermDeposit createAccountTermDeposit(Long boardId, Long bankId, AccountTermDeposit accountTermDeposit);
     AccountTermDeposit updateAccountTermDeposit(Long accountId, AccountTermDeposit accountDetails);
     ResponseEntity<?> deleteAccountTermDeposit(Long accountId);
+    Page<AccountTermDeposit> calcularInteresesProcedure(Long boardId, Pageable pageable);
+    //List<AccountTermDeposit> findAccountTermDepositsByBoardId(Long boardId);
 }
