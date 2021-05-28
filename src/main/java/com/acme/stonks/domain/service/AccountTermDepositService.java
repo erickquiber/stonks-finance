@@ -1,6 +1,5 @@
 package com.acme.stonks.domain.service;
 
-import java.util.List;
 import java.util.Optional;
 
 import com.acme.stonks.domain.model.AccountTermDeposit;
