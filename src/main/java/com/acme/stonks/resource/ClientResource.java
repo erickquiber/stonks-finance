@@ -9,7 +9,6 @@ import lombok.Setter;
 public class ClientResource {
     private  Long id;
     private Integer dni;
-    private String name;
     private String firstName;
     private String lastName;
     private String phone;
