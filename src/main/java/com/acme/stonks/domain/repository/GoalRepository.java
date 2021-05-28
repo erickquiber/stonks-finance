@@ -1,6 +1,5 @@
 package com.acme.stonks.domain.repository;
 
-import com.acme.stonks.domain.model.Board;
 import com.acme.stonks.domain.model.Goal;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

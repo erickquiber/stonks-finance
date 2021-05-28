@@ -9,10 +9,10 @@ public class SaveAccountTermDepositResource {
     
     @NotNull
     @Positive
-    private float capital;
+    private double capital;
     
     @NotNull
-    private float tea;
+    private double tea;
     
     private float minTea;
 
@@ -28,19 +28,19 @@ public class SaveAccountTermDepositResource {
     @NotNull
     private boolean withdrawalInterest;
 
-    public float getCapital() {
+    public double getCapital() {
         return capital;
     }
 
-    public void setCapital(float capital) {
+    public void setCapital(double capital) {
         this.capital = capital;
     }
 
-    public float getTea() {
+    public double getTea() {
         return tea;
     }
 
-    public void setTea(float tea) {
+    public void setTea(double tea) {
         this.tea = tea;
     }
 

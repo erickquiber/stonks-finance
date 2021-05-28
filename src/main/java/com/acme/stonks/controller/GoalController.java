@@ -1,9 +1,7 @@
 package com.acme.stonks.controller;
 
-import com.acme.stonks.domain.model.Client;
 import com.acme.stonks.domain.model.Goal;
 import com.acme.stonks.domain.service.GoalService;
-import com.acme.stonks.resource.ClientResource;
 import com.acme.stonks.resource.GoalResource;
 import com.acme.stonks.resource.SaveGoalResource;
 import io.swagger.v3.oas.annotations.tags.Tag;

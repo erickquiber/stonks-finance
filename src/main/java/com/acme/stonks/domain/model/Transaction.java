@@ -38,10 +38,10 @@ public class Transaction {
 
     @NotNull
     @Column(name = "current_capital")
-    private float currentCapital; 
+    private double currentCapital; 
 
     @NotNull
-    private float amount;
+    private double amount;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "account_term_deposit_id", nullable = false)
@@ -79,20 +79,20 @@ public class Transaction {
         return this;
     }
 
-    public float getCurrentCapital() {
+    public double getCurrentCapital() {
         return currentCapital;
     }
 
-    public Transaction setCurrentCapital(float currentCapital) {
+    public Transaction setCurrentCapital(double currentCapital) {
         this.currentCapital = currentCapital;
         return this;
     }
 
-    public float getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public Transaction setAmount(float amount) {
+    public Transaction setAmount(double amount) {
         this.amount = amount;
         return this;
     }

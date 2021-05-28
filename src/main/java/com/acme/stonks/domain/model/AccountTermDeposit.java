@@ -31,10 +31,10 @@ public class AccountTermDeposit {
     private Long id;
 
     @NotNull
-    private float capital;
+    private double capital;
 
     @NotNull
-    private float tea;
+    private double tea;
 
     @Column(name = "min_tea")
     private float minTea;
@@ -83,20 +83,20 @@ public class AccountTermDeposit {
         return this;
     }
 
-    public float getCapital() {
+    public double getCapital() {
         return capital;
     }
 
-    public AccountTermDeposit setCapital(float capital) {
+    public AccountTermDeposit setCapital(double capital) {
         this.capital = capital;
         return this;
     }
 
-    public float getTea() {
+    public double getTea() {
         return tea;
     }
 
-    public AccountTermDeposit setTea(float tea) {
+    public AccountTermDeposit setTea(double tea) {
         this.tea = tea;
         return this;
     }
