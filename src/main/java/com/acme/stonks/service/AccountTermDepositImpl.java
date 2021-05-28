@@ -1,5 +1,6 @@
 package com.acme.stonks.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.acme.stonks.domain.model.AccountTermDeposit;
@@ -61,7 +62,7 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
         .setMinTea(accountDetails.getMinTea())
         .setDateEnd(accountDetails.getDateEnd())
         .setDateStart(accountDetails.getDateStart())
-        .setInterestPaymentType(accountDetails.isInterestPaymentType())
+        .setMonthlyPayment(accountDetails.isMonthlyPayment())
         .setWithdrawalInterest(accountDetails.isWithdrawalInterest()));
     }
 
@@ -71,6 +72,18 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
         accountTermDepositRepository.delete(post);
         return ResponseEntity.ok().build();
     }
+
+
+	@Override
+	public Page<AccountTermDeposit> calcularInteresesProcedure(Long accountId, Pageable pageable) {
+		// TODO Auto-generated method stub
+		return accountTermDepositRepository.calcularInteresesProcedure(accountId,pageable);
+	}
+
+	/*@Override
+	public List<AccountTermDeposit> findAccountTermDepositsByBoardId(Long boardId) {
+		return accountTermDepositRepository.findAccountTermDepositsByBoardId(boardId);
+	}*/
 
     
 }
