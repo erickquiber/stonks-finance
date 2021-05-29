@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 
 public interface TransactionService {
     Page<Transaction> getAllTransactionsByAccountTremDepositId(Long accountTermDepositId,Pageable pageable);
+    Page<Transaction> findByBoardId(Long boardId,Pageable pageable);
     Transaction createTransaction(Transaction transaction);
     ResponseEntity<?> deleteTransaction(Long transactionId);
 }

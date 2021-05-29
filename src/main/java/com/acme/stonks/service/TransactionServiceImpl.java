@@ -31,5 +31,10 @@ public class TransactionServiceImpl implements TransactionService {
         transactionRepository.deleteById(transactionId);;
         return ResponseEntity.ok().build();
     }
+
+    @Override
+    public Page<Transaction> findByBoardId(Long boardId, Pageable pageable) {
+        return transactionRepository.findByBoardId(boardId, pageable);
+    }
     
 }
