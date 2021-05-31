@@ -1,7 +1,6 @@
 package com.acme.stonks.service;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 import com.acme.stonks.domain.model.AccountTermDeposit;
@@ -116,7 +115,6 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
 
 	@Override
 	public Page<AccountTermDeposit> calcularInteresesProcedure(Long accountId, Pageable pageable) {
-		// TODO Auto-generated method stub
 		return accountTermDepositRepository.calcularInteresesProcedure(accountId,pageable);
 	}
 
