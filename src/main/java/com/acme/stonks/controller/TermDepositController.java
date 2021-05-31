@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.acme.stonks.domain.model.TermDeposit;
 import com.acme.stonks.domain.service.TermDepositService;
@@ -49,6 +51,18 @@ public class TermDepositController {
     	return convertToResource(termDepositService.getTermDepositByIdAndBankId(bankId, termdepositId));
     }
     
+    @GetMapping("/comparison")
+    public Page<TermDepositResource> getAllComparison(
+    		@RequestParam(value="amount") float amount, 
+            @RequestParam(value="days") Integer days, 
+            @RequestParam(value="currency") String currency, 
+            Pageable pageable){
+    	Page<TermDeposit> termDepositPage=termDepositService.getAllComparison(amount,days, currency,pageable);
+    	List<TermDepositResource> resources=termDepositPage.getContent().stream()
+    			.map(this::convertToResource).collect(Collectors.toList());
+        return new PageImpl<>(resources, pageable, resources.size());
+    }
+
     @PostMapping("/banks/{bankId}/termdeposit")
     public TermDepositResource createTermDeposit(
             @PathVariable(value = "bankId") Long bankId,

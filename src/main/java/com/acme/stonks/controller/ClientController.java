@@ -61,9 +61,6 @@ public class ClientController {
         return clientService.deleteClient(clientId);
     }
 
-
-
-
     private Client convertToEntity(SaveClientResource resource) {
         return mapper.map(resource, Client.class);
     }
