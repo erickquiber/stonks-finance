@@ -12,7 +12,17 @@ public class SaveTermDepositResource {
 	
 	@NotNull
 	private float minAmount;
+
+	@NotNull
+	private String currency;
 	
+	public String getCurrency() {
+		return currency;
+	}
+	public SaveTermDepositResource setCurrency(String currency) {
+		this.currency = currency;
+		return this;
+	}
 	public float getTea() {
 		return tea;
 	}
