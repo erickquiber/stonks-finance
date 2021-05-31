@@ -1,7 +1,6 @@
 package com.acme.stonks.domain.service;
 
 import com.acme.stonks.domain.model.Client;
-import com.acme.stonks.domain.model.Client;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;

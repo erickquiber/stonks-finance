@@ -8,12 +8,6 @@ public class SaveTermDepositResource {
 	private float tea;
 
 	@NotNull
-	private String name;
-	
-	@NotNull
-	private Integer maxDay;
-	
-	@NotNull
 	private Integer minDay;
 	
 	@NotNull
@@ -24,20 +18,6 @@ public class SaveTermDepositResource {
 	}
 	public SaveTermDepositResource setTea(float tea) {
 		this.tea = tea;
-		return this;
-	}
-	public String getName() {
-		return name;
-	}
-	public SaveTermDepositResource setName(String name) {
-		this.name = name;
-		return this;
-	}
-	public Integer getMaxDay() {
-		return maxDay;
-	}
-	public SaveTermDepositResource setMaxDay(Integer maxDay) {
-		this.maxDay = maxDay;
 		return this;
 	}
 	public Integer getMinDay() {

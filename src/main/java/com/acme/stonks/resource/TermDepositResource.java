@@ -3,12 +3,30 @@ package com.acme.stonks.resource;
 public class TermDepositResource {
 
 	private Long id;
-	private String name;
 	private float tea;
-	private Integer maxDay;
+	private String currency;
 	private Integer minDay;
 	private float minAmount;
-	
+	private float profit;
+	private float monthlyProfit;
+
+	public float getProfit() {
+		return profit;
+	}
+
+	public TermDepositResource setProfit(float profit) {
+		this.profit = profit;
+		return this;
+	}
+
+	public float getMonthlyProfit() {
+		return monthlyProfit;
+	}
+
+	public TermDepositResource setMonthlyProfit(float monthlyProfit) {
+		this.monthlyProfit = monthlyProfit;
+		return this;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -16,12 +34,11 @@ public class TermDepositResource {
 		this.id = id;
 		return this;
 	}
-	
-	public String getName() {
-		return name;
+	public String getCurrency() {
+		return currency;
 	}
-	public TermDepositResource setName(String name) {
-		this.name = name;
+	public TermDepositResource setCurrency(String currency) {
+		this.currency = currency;
 		return this;
 	}
 	public float getTea() {
@@ -29,13 +46,6 @@ public class TermDepositResource {
 	}
 	public TermDepositResource setTea(float tea) {
 		this.tea = tea;
-		return this;
-	}
-	public Integer getMaxDay() {
-		return maxDay;
-	}
-	public TermDepositResource setMaxDay(Integer maxDay) {
-		this.maxDay = maxDay;
 		return this;
 	}
 	public Integer getMinDay() {

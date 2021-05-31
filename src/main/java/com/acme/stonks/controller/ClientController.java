@@ -11,7 +11,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -61,9 +60,6 @@ public class ClientController {
     public ResponseEntity<?> deleteClient(@PathVariable Long clientId) {
         return clientService.deleteClient(clientId);
     }
-
-
-
 
     private Client convertToEntity(SaveClientResource resource) {
         return mapper.map(resource, Client.class);

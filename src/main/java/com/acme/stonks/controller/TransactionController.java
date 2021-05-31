@@ -37,8 +37,15 @@ public class TransactionController {
         return new PageImpl<>(resources, pageable, resources.size());
     }
 
-
-
+    @GetMapping("/board/{boardId}/transactions")
+    public Page<TransactionResource> getAllTransactionsByBoardId(
+            @PathVariable (value = "boardId") Long boardId,
+            Pageable pageable) {
+        Page<Transaction> transactionPage = transactionService.findByBoardId(boardId, pageable);
+        List<TransactionResource> resources = transactionPage.getContent().stream()
+                .map(this::convertToResource).collect(Collectors.toList());
+        return new PageImpl<>(resources, pageable, resources.size());
+    }
 
 
     // Converts

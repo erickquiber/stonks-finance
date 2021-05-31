@@ -5,30 +5,37 @@ import java.util.Date;
 public class AccountTermDepositResource {
 
     private Long id;
-    private float capital;
-    private float tea;
+    private double capital;
+    private double tea;
     private float minTea;
     private Date dateStart;
     private Date dateEnd;
-    private boolean interestPaymentType;
+    private boolean monthlyPayment;
     private boolean withdrawalInterest;
+    private float interest;
 
-    public Long getId() {
+    public float getInterest() {
+		return interest;
+	}
+	public void setInterest(float interest) {
+		this.interest = interest;
+	}
+	public Long getId() {
         return id;
     }
     public void setId(Long id) {
         this.id = id;
     }
-    public float getCapital() {
+    public double getCapital() {
         return capital;
     }
-    public void setCapital(float capital) {
+    public void setCapital(double capital) {
         this.capital = capital;
     }
-    public float getTea() {
+    public double getTea() {
         return tea;
     }
-    public void setTea(float tea) {
+    public void setTea(double tea) {
         this.tea = tea;
     }
     public float getMinTea() {
@@ -49,13 +56,13 @@ public class AccountTermDepositResource {
     public void setDateEnd(Date dateEnd) {
         this.dateEnd = dateEnd;
     }
-    public boolean isInterestPaymentType() {
-        return interestPaymentType;
-    }
-    public void setInterestPaymentType(boolean interestPaymentType) {
-        this.interestPaymentType = interestPaymentType;
-    }
-    public boolean isWithdrawalInterest() {
+    public boolean isMonthlyPayment() {
+		return monthlyPayment;
+	}
+	public void setMonthlyPayment(boolean monthlyPayment) {
+		this.monthlyPayment = monthlyPayment;
+	}
+	public boolean isWithdrawalInterest() {
         return withdrawalInterest;
     }
     public void setWithdrawalInterest(boolean withdrawalInterest) {

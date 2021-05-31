@@ -7,8 +7,8 @@ public class TransactionResource {
     private Long id;
     private String type;
     private Date date;
-    private Float currentCapital;
-    private Float amount;
+    private double currentCapital;
+    private double amount;
 
     public Long getId() {
         return id;
@@ -34,19 +34,19 @@ public class TransactionResource {
         this.date = date;
     }
 
-    public Float getCurrentCapital() {
+    public double getCurrentCapital() {
         return currentCapital;
     }
 
-    public void setCurrentCapital(Float currentCapital) {
+    public void setCurrentCapital(double currentCapital) {
         this.currentCapital = currentCapital;
     }
 
-    public Float getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(Float amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 

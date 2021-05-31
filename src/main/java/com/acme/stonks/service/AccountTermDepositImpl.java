@@ -1,14 +1,19 @@
 package com.acme.stonks.service;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import com.acme.stonks.domain.model.AccountTermDeposit;
 import com.acme.stonks.domain.model.Bank;
 import com.acme.stonks.domain.model.Board;
+import com.acme.stonks.domain.model.Transaction;
 import com.acme.stonks.domain.repository.AccountTermDepositRepository;
 import com.acme.stonks.domain.repository.BankRepository;
 import com.acme.stonks.domain.repository.BoardRepository;
+import com.acme.stonks.domain.repository.TransactionRepository;
 import com.acme.stonks.domain.service.AccountTermDepositService;
+import com.acme.stonks.util.CompoundInterest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -29,7 +34,8 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
     @Autowired
     private BoardRepository boardRepository;
 
- 
+    @Autowired
+    private TransactionRepository transactionRepository;
 
     @Override
     public Page<AccountTermDeposit> getAllAccountTermDepositsByBoardId(Long boardId, Pageable pageable) {
@@ -47,9 +53,12 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
         Bank bank = bankRepository.findById(bankId).orElseThrow();
         Board board = boardRepository.findById(boardId).orElseThrow();
 
-        return accountTermDepositRepository.save(accountTermDeposit
+        accountTermDepositRepository.save(accountTermDeposit
         .setBank(bank).setBoard(board));
-        //Agregar board cuando se implemente
+        
+        createTransactionsByAccount(accountTermDeposit);
+
+        return accountTermDeposit;
     }
 
     @Override
@@ -61,7 +70,7 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
         .setMinTea(accountDetails.getMinTea())
         .setDateEnd(accountDetails.getDateEnd())
         .setDateStart(accountDetails.getDateStart())
-        .setInterestPaymentType(accountDetails.isInterestPaymentType())
+        .setMonthlyPayment(accountDetails.isMonthlyPayment())
         .setWithdrawalInterest(accountDetails.isWithdrawalInterest()));
     }
 
@@ -72,5 +81,48 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
         return ResponseEntity.ok().build();
     }
 
-    
+    //test
+    public void createTransactionsByAccount(AccountTermDeposit account){
+        long days = CompoundInterest.daysDifference(account.getDateStart(), account.getDateEnd());
+
+        double months = (double)days/30;
+        months = months - months % 1;
+
+        Date date = account.getDateStart();
+
+        double cap = account.getCapital();
+        double tem = CompoundInterest.teaToTem(account.getTea());
+        double amount = 0.0d;
+
+        System.out.println(days + " --- " + months + " --- " + cap + " --- " + tem);
+
+        for (int i = 0; i < months; i++) {
+            
+            Transaction transaction = new Transaction();
+
+            amount = cap*tem;
+            cap = cap+amount;
+            date = CompoundInterest.addDaysToDate(date, 30);
+
+            transaction.setType("Pago de Interes")
+            .setAccountTermDeposit(account)
+            .setAmount(amount)
+            .setDate(date)
+            .setCurrentCapital(cap);
+
+            transactionRepository.save(transaction);
+        } 
+    }
+
+	@Override
+	public Page<AccountTermDeposit> calcularInteresesProcedure(Long accountId, Pageable pageable) {
+		// TODO Auto-generated method stub
+		return accountTermDepositRepository.calcularInteresesProcedure(accountId,pageable);
+	}
+
+	/*@Override
+	public List<AccountTermDeposit> findAccountTermDepositsByBoardId(Long boardId) {
+		return accountTermDepositRepository.findAccountTermDepositsByBoardId(boardId);
+	}*/
+
 }

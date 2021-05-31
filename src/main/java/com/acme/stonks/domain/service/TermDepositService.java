@@ -12,4 +12,6 @@ public interface TermDepositService {
 	TermDeposit createTermDeposit(Long bankId, TermDeposit termDeposit);
 	TermDeposit updateTermDeposit(Long bankId, Long termDepositId, TermDeposit teaDetails);
 	ResponseEntity<?> deleteTermDeposit(Long bankId, Long termDepositId);
+	Page<TermDeposit> getAllComparison(float amount, Integer days, String currency , Pageable pageable);
+
 }
