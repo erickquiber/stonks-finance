@@ -27,6 +27,12 @@ public class Client {
     private String address;
     @NotNull
     private String country;
+    @NotNull
+    private String username;
+    @NotNull
+    private String password;
+
+
 
 
 }

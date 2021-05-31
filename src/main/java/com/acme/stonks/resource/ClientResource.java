@@ -13,5 +13,7 @@ public class ClientResource {
     private String phone;
     private String address;
     private String Country;
+    private String username;
+    private String password;
 
 }

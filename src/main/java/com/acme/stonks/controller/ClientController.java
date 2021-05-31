@@ -3,6 +3,7 @@ package com.acme.stonks.controller;
 import com.acme.stonks.domain.model.Client;
 import com.acme.stonks.domain.service.ClientService;
 import com.acme.stonks.resource.ClientResource;
+import com.acme.stonks.resource.GoalResource;
 import com.acme.stonks.resource.SaveClientResource;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.modelmapper.ModelMapper;
@@ -25,6 +26,13 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
+    @GetMapping("/clients/login/{username}/{password}")
+    public ClientResource getClientByUsernameAndPassword(
+            @PathVariable(name = "username") String username,
+            @PathVariable(name = "password") String password) {
+        return convertToResource(clientService.getClientByUsernameAndPassword(username, password));
+    }
+
     @GetMapping("/clients")
     public Page<ClientResource> getAllClients(Pageable pageable) {
 
@@ -34,6 +42,7 @@ public class ClientController {
                 .collect(Collectors.toList());
         return new PageImpl<>(resources, pageable, resources.size());
     }
+
 
     @GetMapping("/clients/{clientId}")
     public ClientResource getClientById(@PathVariable(value = "clientId") Long clientId) {
