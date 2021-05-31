@@ -19,4 +19,8 @@ public class SaveClientResource {
     private String address;
     @NotNull
     private String Country;
+    @NotNull
+    private String username;
+    @NotNull
+    private String password;
 }

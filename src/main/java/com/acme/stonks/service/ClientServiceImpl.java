@@ -42,7 +42,10 @@ public class ClientServiceImpl implements ClientService {
             client.setCountry(clientRequest.getCountry());
             client.setFirstName(clientRequest.getFirstName());
             client.setLastName(clientRequest.getLastName());
+            client.setUsername(clientRequest.getUsername());
+            client.setPassword(clientRequest.getPassword());
             client.setPhone(clientRequest.getPhone());
+
         return clientRepository.save(client);
         }).orElseThrow(()->new ResourceNotFoundException("Client","Id",clientId));
     }
@@ -53,5 +56,13 @@ public class ClientServiceImpl implements ClientService {
             clientRepository.delete(client);
             return ResponseEntity.ok().build();
         }).orElseThrow(()-> new ResourceNotFoundException("Client","Id",clientId));
+    }
+
+    @Override
+    public Client getClientByUsernameAndPassword(String username, String password) {
+        return  clientRepository.findByUsernameAndPassword(username ,password)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Client not found with Username " + username+
+                                " and Password " + password));
     }
 }
