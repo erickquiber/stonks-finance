@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,7 +25,7 @@ import com.acme.stonks.domain.model.Bank;
 import com.acme.stonks.domain.service.BankService;
 import com.acme.stonks.resource.BankResource;
 import com.acme.stonks.resource.SaveBankResource;
-
+@Tag(name="Banco",description = "Banco API")
 @RestController
 @RequestMapping("/api")
 public class BankController {

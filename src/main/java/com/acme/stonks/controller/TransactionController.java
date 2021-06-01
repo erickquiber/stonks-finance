@@ -7,6 +7,7 @@ import com.acme.stonks.domain.model.Transaction;
 import com.acme.stonks.domain.service.TransactionService;
 import com.acme.stonks.resource.TransactionResource;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+@Tag(name="Transacciones",description = "Transacciones API")
 @RestController
 @RequestMapping("/api")
 public class TransactionController {

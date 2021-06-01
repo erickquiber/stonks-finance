@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
+
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,7 +25,7 @@ import com.acme.stonks.domain.model.TermDeposit;
 import com.acme.stonks.domain.service.TermDepositService;
 import com.acme.stonks.resource.SaveTermDepositResource;
 import com.acme.stonks.resource.TermDepositResource;
-
+@Tag(name="Deposito a Plazo Fijo",description = " API")
 @RestController
 @RequestMapping("/api")
 public class TermDepositController {
