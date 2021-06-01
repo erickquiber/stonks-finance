@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-@Tag(name="Transacciones",description = "Transacciones API")
+@Tag(name="Transaction",description = "Transaction API")
 @RestController
 @RequestMapping("/api")
 public class TransactionController {

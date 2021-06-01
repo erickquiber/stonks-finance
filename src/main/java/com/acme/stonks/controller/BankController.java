@@ -25,7 +25,7 @@ import com.acme.stonks.domain.model.Bank;
 import com.acme.stonks.domain.service.BankService;
 import com.acme.stonks.resource.BankResource;
 import com.acme.stonks.resource.SaveBankResource;
-@Tag(name="Banco",description = "Banco API")
+@Tag(name="Bank",description = "Bank API")
 @RestController
 @RequestMapping("/api")
 public class BankController {
