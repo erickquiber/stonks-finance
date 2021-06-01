@@ -30,8 +30,10 @@ public class StonksApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/**").allowedOrigins("/**")
-                        .allowedMethods("*").allowedHeaders("*");
+                registry.addMapping("/api/**")
+                        .allowedOrigins( "/**" )
+                        .allowedOrigins("*")
+                        .allowedHeaders("*");
             }
         };
     }
