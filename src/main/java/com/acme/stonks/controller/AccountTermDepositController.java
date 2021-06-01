@@ -10,6 +10,7 @@ import com.acme.stonks.domain.service.AccountTermDepositService;
 import com.acme.stonks.resource.AccountTermDepositResource;
 import com.acme.stonks.resource.SaveAccountTermDepositResource;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -25,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+@Tag(name="Cuenta Plazo Fijo",description = "API")
 @RestController
 @RequestMapping("/api")
 public class AccountTermDepositController {
