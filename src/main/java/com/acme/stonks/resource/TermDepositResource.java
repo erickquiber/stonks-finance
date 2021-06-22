@@ -1,5 +1,7 @@
 package com.acme.stonks.resource;
 
+import com.acme.stonks.domain.model.Bank;
+
 public class TermDepositResource {
 
 	private Long id;
@@ -9,6 +11,15 @@ public class TermDepositResource {
 	private float minAmount;
 	private float profit;
 	private float monthlyProfit;
+	private Bank bank;
+
+	public Bank getBank() {
+		return bank;
+	}
+
+	public void setBank(Bank bank) {
+		this.bank = bank;
+	}
 
 	public float getProfit() {
 		return profit;
