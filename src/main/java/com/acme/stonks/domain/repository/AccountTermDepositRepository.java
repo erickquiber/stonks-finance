@@ -17,9 +17,9 @@ public interface AccountTermDepositRepository extends JpaRepository<AccountTermD
     Page<AccountTermDeposit> findAllByBoardId(Long boardId, Pageable pageable);
     
     //@Query(value="CALL new_procedure(:idboard);", nativeQuery = true)
-    @Procedure(procedureName = "NEW_PROCEDURE")
+    /*@Procedure(procedureName = "NEW_PROCEDURE")
     Page<AccountTermDeposit> calcularInteresesProcedure(@Param("idboard") Long idboard,Pageable pageable);
     
     @Query(value="{call new_procedure(:idboard)}",nativeQuery = true)
-    List<AccountTermDeposit> findAccountTermDepositsByBoardId(@Param("idboard") Long idboard);
+    List<AccountTermDeposit> findAccountTermDepositsByBoardId(@Param("idboard") Long idboard);*/
 }
