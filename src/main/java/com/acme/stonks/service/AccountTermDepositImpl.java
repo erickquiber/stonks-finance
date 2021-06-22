@@ -113,10 +113,11 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
         } 
     }
 
+    /*
 	@Override
 	public Page<AccountTermDeposit> calcularInteresesProcedure(Long accountId, Pageable pageable) {
 		return accountTermDepositRepository.calcularInteresesProcedure(accountId,pageable);
-	}
+	}*/
 
 	/*@Override
 	public List<AccountTermDeposit> findAccountTermDepositsByBoardId(Long boardId) {

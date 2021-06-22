@@ -63,9 +63,8 @@ public class AccountTermDeposit {
     @OneToMany(mappedBy = "accountTermDeposit")
     private List<Transaction> transactions;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "bank_id", nullable = false)
-    @JsonIgnore
     private Bank bank;
     
     

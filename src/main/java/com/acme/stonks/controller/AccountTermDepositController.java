@@ -75,6 +75,7 @@ public class AccountTermDepositController {
         return accountTermDepositService.deleteAccountTermDeposit(accountId);
     }
 
+    /*
     @GetMapping("/board/{boardId}/accounts/intereses")
     public Page<AccountTermDepositResource> calcularInteresesProcedure(@PathVariable(value="boardId") Long boardId, Pageable pageable){
     	Page<AccountTermDeposit> list=accountTermDepositService.calcularInteresesProcedure(boardId,pageable);
@@ -83,7 +84,7 @@ public class AccountTermDepositController {
                 .collect(Collectors.toList());
         return new PageImpl<>(resources, pageable, resources.size());
     }
-    
+    */
     // Converts
     private AccountTermDeposit convertToEntity(SaveAccountTermDepositResource resource) {
         return mapper.map(resource, AccountTermDeposit.class);

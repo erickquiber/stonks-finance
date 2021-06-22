@@ -2,6 +2,8 @@ package com.acme.stonks.resource;
 
 import java.util.Date;
 
+import com.acme.stonks.domain.model.Bank;
+
 public class AccountTermDepositResource {
 
     private Long id;
@@ -14,6 +16,14 @@ public class AccountTermDepositResource {
     private boolean withdrawalInterest;
     private float interest;
 
+    private Bank bank;
+
+    public Bank getBank() {
+        return bank;
+    }
+    public void setBank(Bank bank) {
+        this.bank = bank;
+    }
     public float getInterest() {
 		return interest;
 	}

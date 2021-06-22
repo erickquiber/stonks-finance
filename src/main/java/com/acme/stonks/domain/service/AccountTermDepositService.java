@@ -14,6 +14,6 @@ public interface AccountTermDepositService {
     AccountTermDeposit createAccountTermDeposit(Long boardId, Long bankId, AccountTermDeposit accountTermDeposit);
     AccountTermDeposit updateAccountTermDeposit(Long accountId, AccountTermDeposit accountDetails);
     ResponseEntity<?> deleteAccountTermDeposit(Long accountId);
-    Page<AccountTermDeposit> calcularInteresesProcedure(Long boardId, Pageable pageable);
+    //Page<AccountTermDeposit> calcularInteresesProcedure(Long boardId, Pageable pageable);
     //List<AccountTermDeposit> findAccountTermDepositsByBoardId(Long boardId);
 }
