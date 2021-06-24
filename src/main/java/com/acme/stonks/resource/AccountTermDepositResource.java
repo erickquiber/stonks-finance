@@ -3,6 +3,7 @@ package com.acme.stonks.resource;
 import java.util.Date;
 
 import com.acme.stonks.domain.model.Bank;
+import com.acme.stonks.domain.model.Board;
 
 public class AccountTermDepositResource {
 
@@ -15,9 +16,15 @@ public class AccountTermDepositResource {
     private boolean monthlyPayment;
     private boolean withdrawalInterest;
     private float interest;
-
+    private Board board;
     private Bank bank;
 
+    public Board getBoard() {
+        return board;
+    }
+    public void setBoard(Board board) {
+        this.board = board;
+    }
     public Bank getBank() {
         return bank;
     }

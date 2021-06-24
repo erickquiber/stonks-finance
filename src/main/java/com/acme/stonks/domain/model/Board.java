@@ -28,5 +28,6 @@ public class Board {
     private Client client;
 
     @OneToMany(mappedBy = "board")
+    @JsonIgnore
     private List<AccountTermDeposit> accounts;
 }

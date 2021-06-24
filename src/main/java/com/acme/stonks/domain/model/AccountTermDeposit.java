@@ -68,10 +68,9 @@ public class AccountTermDeposit {
     private Bank bank;
     
     
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "board_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
     private Board board;
     
     	// Prueba
