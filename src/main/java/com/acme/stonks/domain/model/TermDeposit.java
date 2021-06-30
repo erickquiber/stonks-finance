@@ -15,8 +15,6 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 @Table(name="termdeposit")
 public class TermDeposit {
@@ -24,10 +22,9 @@ public class TermDeposit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "bank_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
 	private Bank bank;
     
 	@NotNull
