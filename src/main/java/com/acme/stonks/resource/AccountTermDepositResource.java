@@ -43,13 +43,13 @@ public class AccountTermDepositResource {
         this.capital = capital;
     }
     public double getTea() {
-        return tea;
+        return tea*100;
     }
     public void setTea(double tea) {
         this.tea = tea;
     }
     public float getMinTea() {
-        return minTea;
+        return minTea*100;
     }
     public void setMinTea(float minTea) {
         this.minTea = minTea;

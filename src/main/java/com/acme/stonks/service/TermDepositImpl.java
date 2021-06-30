@@ -70,10 +70,11 @@ public class TermDepositImpl implements TermDepositService{
 
 	@Override
 	public Page<TermDeposit> getAllComparison(float amount, Integer days, String currency, Pageable pageable) {
-		List<TermDeposit> lst=termDepositRepository.getAllComparison(amount, days, currency);
+		
+		List<TermDeposit> lst = termDepositRepository.getAllComparison(amount, days, currency);
 		
 		for (TermDeposit termDeposit : lst) {
-			double profit=amount*(Math.pow(1+(double)termDeposit.getTea(),(double)days/360)-1);
+			double profit = amount * (Math.pow(1 + (double)termDeposit.getTea(),(double)days/360)-1);
 			termDeposit.setProfit((float)profit).setMonthlyProfit((float)profit/((float)days/30));
 		}
 		return new PageImpl<>(lst,pageable,lst.size());
