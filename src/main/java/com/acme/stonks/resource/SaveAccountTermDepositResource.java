@@ -41,7 +41,7 @@ public class SaveAccountTermDepositResource {
     }
 
     public void setTea(double tea) {
-        this.tea = tea;
+        this.tea = tea/100;
     }
 
     public float getMinTea() {
@@ -49,7 +49,7 @@ public class SaveAccountTermDepositResource {
     }
 
     public void setMinTea(float minTea) {
-        this.minTea = minTea;
+        this.minTea = minTea/100;
     }
 
     public Date getDateStart() {

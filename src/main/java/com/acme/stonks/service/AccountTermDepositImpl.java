@@ -80,7 +80,7 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
         return ResponseEntity.ok().build();
     }
 
-    //test
+
     public void createTransactionsByAccount(AccountTermDeposit account){
         long days = CompoundInterest.daysDifference(account.getDateStart(), account.getDateEnd());
 
@@ -92,8 +92,6 @@ public class AccountTermDepositImpl implements AccountTermDepositService {
         double cap = account.getCapital();
         double tem = CompoundInterest.teaToTem(account.getTea());
         double amount = 0.0d;
-
-        System.out.println(days + " --- " + months + " --- " + cap + " --- " + tem);
 
         for (int i = 0; i < months; i++) {
             
